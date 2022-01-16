@@ -3,4 +3,4 @@ micronaut:
     name: demo
 kafka:
   bootstrap:
-    servers: ${KAFKA_URL
+    servers: ${KAFKA_URL}

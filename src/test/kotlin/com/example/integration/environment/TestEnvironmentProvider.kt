@@ -1,13 +1,10 @@
-package com.example.integration.enviromentprovider
+package com.example.integration.environment
 
-import com.example.integration.testkafka.TestProducer
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 import io.micronaut.test.support.TestPropertyProvider
-import jakarta.inject.Inject
 import org.apache.kafka.clients.admin.AdminClient
 import org.apache.kafka.clients.admin.AdminClientConfig
 import org.apache.kafka.clients.admin.NewTopic
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.testcontainers.containers.KafkaContainer
 import org.testcontainers.junit.jupiter.Testcontainers
@@ -16,9 +13,9 @@ import org.testcontainers.utility.DockerImageName
 
 
 @Testcontainers
-@MicronautTest()
+@MicronautTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-open class TestEnviromentProvider : TestPropertyProvider {
+open class TestEnvironmentProvider : TestPropertyProvider {
 
     var kafka = KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:6.2.1")).apply { start() }
 

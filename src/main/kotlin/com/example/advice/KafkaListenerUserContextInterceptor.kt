@@ -6,8 +6,8 @@ import io.micronaut.aop.MethodInvocationContext
 import io.micronaut.context.annotation.Prototype
 
 @Prototype
-@InterceptorBean(KafkaInterceptorAdvice::class)
-class KafkaInterceptor : MethodInterceptor<Any, Any> {
+@InterceptorBean(KafkaListenerUserContext::class)
+class KafkaListenerUserContextInterceptor : MethodInterceptor<Any, Any> {
 
     override fun intercept(context: MethodInvocationContext<Any, Any>?): Any? {
 

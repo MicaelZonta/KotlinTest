@@ -6,8 +6,8 @@ import io.micronaut.context.annotation.Type
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CLASS, AnnotationTarget.FIELD)
 @Retention(AnnotationRetention.RUNTIME)
 @Around
-@Type(KafkaInterceptor::class)
-annotation class KafkaInterceptorAdvice {
+@Type(KafkaListenerUserContextInterceptor::class)
+annotation class KafkaListenerUserContext {
 
 
 }
