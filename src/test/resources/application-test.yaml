@@ -1,3 +1,7 @@
 kafka:
   bootstrap:
     servers: ${KAFKA_URL}
+aws:
+  name: ${AWS_NAME}
+  endpoint: ${AWS_ENDPOINT}
+  region: ${AWS_REGION}

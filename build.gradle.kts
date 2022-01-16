@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.allopen") version "1.6.10"
     id("com.github.johnrengelman.shadow") version "7.1.1"
     id("io.micronaut.application") version "3.1.1"
+    kotlin("plugin.serialization") version "1.3.70"
 }
 
 version = "0.1"
@@ -47,9 +48,19 @@ dependencies {
     testImplementation("org.testcontainers:testcontainers:1.16.2")
     testImplementation("org.testcontainers:junit-jupiter:1.16.2")
 
+    //Localstack
+    testImplementation("org.testcontainers:localstack:1.16.2")
+    //AWS
 
-
-
+    implementation(platform("software.amazon.awssdk:bom:2.15.0"))
+    implementation("software.amazon.awssdk:ses")
+    implementation("software.amazon.awssdk:aws-core")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
+    implementation("com.amazonaws:aws-java-sdk-core:1.12.141")
+    implementation("com.amazonaws:aws-java-sdk-s3:1.12.141")
+    implementation("com.amazonaws:aws-java-sdk-secretsmanager:1.12.141")
+    implementation("com.amazonaws:aws-java-sdk-sts:1.12.141")
 
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 

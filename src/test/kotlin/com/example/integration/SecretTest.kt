@@ -9,7 +9,7 @@ import jakarta.inject.Inject
 import org.junit.jupiter.api.Test
 
 @MicronautTest
-class HttpTest : TestEnvironmentProvider() {
+class SecretTest : TestEnvironmentProvider() {
 
     @Inject
     @field:Client("/")
@@ -17,7 +17,7 @@ class HttpTest : TestEnvironmentProvider() {
 
     @Test
     fun `should return Hello World message`() {
-        val request: HttpRequest<Any> = HttpRequest.GET("/hello")
+        val request: HttpRequest<Any> = HttpRequest.GET("/secret")
         val body = httpClient.toBlocking().retrieve(request)
 
         println(body.toString())

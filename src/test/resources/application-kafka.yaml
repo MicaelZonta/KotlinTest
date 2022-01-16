@@ -1,3 +1,22 @@
 kafka:
   bootstrap:
-    servers: ${KAFKA_URL:""}
+    servers: ${KAFKA_URL}
+aws:
+  name: ${AWS_NAME}
+  endpoint: ${AWS_ENDPOINT}
+  region: ${AWS_REGION}
+  accessKeyId: ${AWS_ACCESS_ID}
+  secretKey: ${AWS_SECRET_ID}
+com:
+  amazonaws:
+    sdk:
+      disableEc2Metadata: true
+cloud:
+  aws:
+    credentials:
+      useDefaultAwsCredentialsChain=true:
+
+AWS_ACCESS_KEY_ID: ${AWS_ACCESS_ID}
+AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ID}
+AWS_ACCESS_KEY: ${AWS_ACCESS_ID}
+AWS_SECRET_KEY: ${AWS_SECRET_ID}

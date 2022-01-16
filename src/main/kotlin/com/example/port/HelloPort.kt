@@ -7,7 +7,7 @@ import io.micronaut.http.annotation.Get
 class HelloPort {
 
     @Get
-    fun Hello(): String {
+    fun hello(): String {
         return "Hello World"
     }
 
